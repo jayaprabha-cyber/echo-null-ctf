@@ -1,10 +1,13 @@
 const express = require("express");
 
 const app = express();
+
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.send("ECHO//NULL archive node online.");
+  res.sendFile(__dirname + "/public/index.html");
 });
 
 app.post("/authenticate", (req, res) => {
