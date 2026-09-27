@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 app.get("/archive", (req, res) => {
   res.json({
     stage: "ARCHIVE",
-    message: "The record was not destroyed. It was moved."
+    message: "The record was not destroyed. It was moved. 2019-11-07 23:17:00"
   });
 });
 app.post("/authenticate", (req, res) => {
