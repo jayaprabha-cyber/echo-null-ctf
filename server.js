@@ -29,6 +29,22 @@ app.get("/evidence", (req, res) => {
   });
 });
 
+app.post("/verify", (req, res) => {
+  const { answer } = req.body;
+
+  if (answer === process.env.FINAL_ANSWER) {
+    return res.json({
+      success: true,
+      message: "Verification successful."
+    });
+  }
+
+  res.status(403).json({
+    success: false,
+    message: "Invalid sequence."
+  });
+});
+
 app.post("/authenticate", (req, res) => {
   const { username, password } = req.body;
 
