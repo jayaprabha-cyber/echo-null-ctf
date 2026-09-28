@@ -10,6 +10,7 @@ app.use(express.static("public"));
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
+
 app.get("/archive", (req, res) => {
   res.json({
     stage: "ARCHIVE",
@@ -19,6 +20,14 @@ app.get("/archive", (req, res) => {
     delta: 2
   });
 });
+
+app.get("/evidence", (req, res) => {
+  res.json({
+    stage: "EVIDENCE",
+    clue: "E"
+  });
+});
+
 app.post("/authenticate", (req, res) => {
   const { username, password } = req.body;
 
