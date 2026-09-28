@@ -24,7 +24,8 @@ app.get("/archive", (req, res) => {
 app.get("/evidence", (req, res) => {
   res.json({
     stage: "EVIDENCE",
-    clue: "E"
+    clue: "E",
+    instruction: "Shift the recovered letter by the archive delta."
   });
 });
 
