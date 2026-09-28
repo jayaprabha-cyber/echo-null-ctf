@@ -1,7 +1,6 @@
 const express = require("express");
 
 const app = express();
-const crypto = require("crypto");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -35,7 +34,8 @@ app.post("/verify", (req, res) => {
   if (answer === process.env.FINAL_ANSWER) {
     return res.json({
       success: true,
-      message: "Verification successful."
+      message: "Verification successful.",
+      flag: process.env.FINAL_FLAG
     });
   }
 
