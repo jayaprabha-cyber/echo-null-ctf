@@ -5,14 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ECHO//NULL</title>
 </head>
+
 <body>
   <h1>ECHO//NULL</h1>
   <p>Restricted Archive Interface</p>
 
+  <h2>Archive Access</h2>
+
   <form action="/authenticate" method="POST">
-    <input type="text" name="username" placeholder="Archive ID" required>
-    <input type="password" name="password" placeholder="Access Key" required>
+    <input
+      type="text"
+      name="username"
+      placeholder="Archive ID"
+      required
+    >
+
+    <input
+      type="password"
+      name="password"
+      placeholder="Access Key"
+      required
+    >
+
     <button type="submit">Authenticate</button>
   </form>
+
+  <h2>Final Verification</h2>
+
+  <form action="/verify" method="POST">
+    <input
+      type="text"
+      name="answer"
+      placeholder="Enter sequence"
+      required
+    >
+
+    <button type="submit">Verify</button>
+  </form>
+
 </body>
 </html>
